@@ -1,0 +1,23 @@
+@import '../../style/variables.scss';
+
+.char{
+    &__back{
+        position: absolute;
+        top: 21px;
+        left: 50px;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+
+    &:hover{
+        color: $blue;
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        }
+    }   
+
+    &__back-icon{
+            margin-right: 12px;
+    }
+}

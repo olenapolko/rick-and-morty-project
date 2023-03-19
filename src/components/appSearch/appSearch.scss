@@ -1,0 +1,34 @@
+@import '../../style/variables.scss';
+
+.app-search{
+    &__form{
+        margin-bottom: 60px;
+    }
+    &__form-wrapper{
+        position: relative;
+    }
+    &__icon{
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+    &__input{
+        width: 100%;
+        padding: 20px 40px;
+        border: 1px solid grey;
+        border-radius: 10px;
+
+        &:focus{
+            border-color: $green;
+            outline-color: $green;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__form {
+            margin-bottom: 32px;
+        }
+    }
+}

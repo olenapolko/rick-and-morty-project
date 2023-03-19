@@ -1,0 +1,82 @@
+@import '../../style/variables.scss';
+
+.char{
+    &__info{
+        max-width: 413px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 76px auto 0;
+    }
+    
+    &__img{
+        border-radius: 50%;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    &__name{
+        margin-top: 16px;
+        font-size: 48px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__subtitle{
+        text-align: center;
+        margin: 48px 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: $light-grey;
+    }
+
+    &__facts{
+        width: 100%;
+    }
+
+    &__fact-name{
+        font-weight: bold;
+    }
+
+    &__fact-detail{
+        color: $dark-grey;
+    }
+
+    &__list-item{
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+    }
+
+    &__fact-name{
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    &__fact-detail{
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    @media (max-width: 767px) {
+        &__name{
+            font-size: 32px;
+            margin-top: 34px;
+        }
+
+        &__subtitle{
+           text-align: start;
+           margin: 34px 0 16px
+        }
+
+        &__img{
+            max-width: 150px;
+        }
+
+        &__back{
+            top: 23px;
+            left: 24px;
+        }
+    }
+}

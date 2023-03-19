@@ -1,0 +1,19 @@
+.app {
+  &__banner {
+    display: flex;
+    justify-content: center;
+    margin: 86px 0 16px;
+
+    &-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__banner {
+        margin: 92px 0 32px;
+    }
+  }
+}
