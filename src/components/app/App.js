@@ -13,10 +13,10 @@ function App() {
       <div className="app">
         <Suspense fallback={<Spinner/>}>
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/characters" element={<MainPage/>}/>
-            <Route path="/characters/:charId" element={<CharPage />} />
-            <Route path="*" element={<Page404/>} />
+            <Route path={process.env.PUBLIC_URL + "/"} element={<Login />} />
+            <Route path={process.env.PUBLIC_URL + "/characters"} element={<MainPage/>}/>
+            <Route path={process.env.PUBLIC_URL + "/characters/:charId"} element={<CharPage />} />
+            <Route path={process.env.PUBLIC_URL + "/*"} element={<Page404/>} />
           </Routes>
         </Suspense>
       </div>
