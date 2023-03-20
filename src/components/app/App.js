@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from 'react';
 import Spinner from '../spinner/Spinner';
 
@@ -9,14 +9,14 @@ const CharPage = lazy(() => import('../pages/CharPage'));
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="app">
         <Suspense fallback={<Spinner/>}>
           <Routes>
-            <Route path={process.env.PUBLIC_URL + "/"} element={<Login />} />
-            <Route path={process.env.PUBLIC_URL + "/characters"} element={<MainPage/>}/>
-            <Route path={process.env.PUBLIC_URL + "/characters/:charId"} element={<CharPage />} />
-            <Route path={process.env.PUBLIC_URL + "/*"} element={<Page404/>} />
+            <Route path="/" element={<Login />} />
+            <Route path="/characters" element={<MainPage/>}/>
+            <Route path="/characters/:charId" element={<CharPage />} />
+            <Route path="*" element={<Page404/>} />
           </Routes>
         </Suspense>
       </div>
