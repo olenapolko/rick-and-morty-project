@@ -13,7 +13,7 @@ function App() {
           <div className="app">
             <Suspense fallback={<Spinner/>}>
                   <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/rick-and-morty-project/" element={<Login />} />
                     <Route path="/characters" element={<MainPage/>}/>
                     <Route path="/characters/:charId" element={<CharPage />} />
                     <Route path="*" element={<Page404/>} />
