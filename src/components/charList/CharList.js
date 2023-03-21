@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useService from '../../services/RickAndMortyService';
-import Spinner from '../spinner/Spinner';
 
 import './charList.scss';
 
-const CharList = ({ results, errorMessage }) => {
+const CharList = ({results}) => {
   const [charsList, setCharsList] = useState([]);
   const navigate = useNavigate();
-
-  const [newItemLoading, setNewItemLoading] = useState(false);
-
-  const { loading } = useService();
 
   useEffect(() => {
     if (results && results.length > 0) {
@@ -24,8 +18,7 @@ const CharList = ({ results, errorMessage }) => {
   }
 
   function renderItems(arr) {
-    if (Array.isArray(arr) && arr.length > 0) {
-      return arr.map((item, i) => {
+      const items = arr.map((item, i) => {
         return (
           <li onClick={() => handleItemClick(item.id)} className="chars__item" key={i}>
             <div className='chars__img-wrapper'>
@@ -35,22 +28,23 @@ const CharList = ({ results, errorMessage }) => {
               <div className="chars__item-name">{item.name}</div>
               <div className='chars__item-species'>{item.species}</div>
             </div>
-        </li>
+          </li>
         )
       })
-    } else {
-      return <p className="chars__not-found">{errorMessage}</p>;
-    }
+
+    return (
+      <ul className="chars__grid">
+        {items}
+      </ul>
+    )
   }
 
   const items = renderItems(charsList);
-  const spinner = loading && !newItemLoading ? <Spinner/> : null;
-
+  
   return (
-      <div className="chars__list">
-      {spinner}
+    <div className="chars__list">
       {items}
-      </div>
+  </div>
   )
 }
 

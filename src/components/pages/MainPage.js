@@ -4,15 +4,13 @@ import CharList from '../charList/CharList';
 import AppBanner from '../appBanner/AppBanner';
 import Pagination from '../pagination/Pagination';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
-import useRickAndMortyService from '../../services/RickAndMortyService';
 
 const MainPage = () => {
-  let [pageNumber, updatePageNumber] = useState(1);
-  let [fetchedData, updateFetchedData] = useState([]);
-  let [search, setSearch] = useState('');
+  const [pageNumber, updatePageNumber] = useState(1);
+  const [fetchedData, updateFetchedData] = useState([]);
+  const [search, setSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  const { loading, error, getCharacter, clearError, getAllCharacters } = useRickAndMortyService();
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
